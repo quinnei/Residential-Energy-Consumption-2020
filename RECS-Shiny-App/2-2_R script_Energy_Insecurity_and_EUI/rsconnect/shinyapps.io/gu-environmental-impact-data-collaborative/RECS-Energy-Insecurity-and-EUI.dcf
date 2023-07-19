@@ -1,0 +1,13 @@
+name: RECS-Energy-Insecurity-and-EUI
+title: RECS-Energy-Insecurity-and-EUI
+username:
+account: gu-environmental-impact-data-collaborative
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9476998
+bundleId: 7473525
+url: https://gu-environmental-impact-data-collaborative.shinyapps.io/RECS-Energy-Insecurity-and-EUI/
+when: 1689743031.84873
+lastSyncTime: 1689743031.84874
+asMultiple: FALSE
+asStatic: FALSE
