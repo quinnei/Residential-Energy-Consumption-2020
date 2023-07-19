@@ -12,7 +12,7 @@ pacman::p_load(tidyverse, # for data wrangling
 ##### I. Create a user defined function that wrangles the data -----------------
 merge_the_data <- function(file_name) {
   
-### 1) Read in the RECS data
+### 1) Read in the RECS summary data
 # Define the path directory
   directory <-
     "https://raw.githubusercontent.com/quinnei/Residential-Energy-Consumption-2020/main/RECS-Shiny-App/1_Dataset/"
@@ -108,27 +108,19 @@ ui <- fluidPage(
     
 # 2-2-a) title of tab 1
     tabPanel("ENERGY INSECURITY",
-# 2-2-b) title of the landing page             
-             fluidRow(
-               h4("HOUSEHOLDS THAT STRUGGLE TO PAY ENERGY BILLS OR LIVE IN POTENTIALLY DANGEROUS THERMAL CONDITIONS"),
+# 2-2-b) title of the landing page
+             h4("HOUSEHOLDS THAT STRUGGLE TO PAY ENERGY BILLS OR LIVE IN POTENTIALLY DANGEROUS THERMAL CONDITIONS"),
 # 2-2-c) Define the size of the map
-               column(width = 8.1,
-                      tmapOutput("energy_insecurity_map", height = "865px")
-               )
-             )
+             tmapOutput("energy_insecurity_map", width = "100%", height = "865px")
     ),
     
     
 # 2-2-a') title of tab 2
     tabPanel("ENERGY USE INTENSITY (EUI)",
-             fluidRow(
-# 2-2-b') title of the landing page               
-               h4("ANNUAL HOUSEHOLD ENERGY CONSUMPTION (PER SQUARE FOOTAGE)"),
+# 2-2-b') title of the landing page
+             h4("ANNUAL HOUSEHOLD ENERGY CONSUMPTION (PER SQUARE FOOTAGE)"),
 # 2-2-c') Define the size of the map
-               column(width = 8.1,
-                      tmapOutput("energy_consumption_map", height = "865px")
-               )
-             )
+             tmapOutput("energy_consumption_map", width = "100%", height = "865px")
     )
   )
 )
@@ -147,7 +139,6 @@ server <- function(input, output) {
   output$energy_insecurity_map <- renderTmap({
 # 1-a) Turn on interactive feature of the map
     tmap_mode("view")
-    
 # 1-b) Return the output that was defined in Part I.
     map_energy_insecurity
   })
@@ -156,9 +147,9 @@ server <- function(input, output) {
   
 ##### 2) Generate the 'energy_consumption_map' output --------------------------
   output$energy_consumption_map <- renderTmap({
-# Turn on interactive feature of the map
+# 2-a) Turn on interactive feature of the map
     tmap_mode("view")
-    
+# 2-b) Return the output that was defined in Part I.
     map_energy_consumption
   })
   
