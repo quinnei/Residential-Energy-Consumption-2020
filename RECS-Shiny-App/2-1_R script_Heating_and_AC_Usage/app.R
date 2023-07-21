@@ -78,7 +78,7 @@ create_bar_plot <- function(number, data, type, title_txt, palette_colors, palet
 ### 2. Define a function that subsets the data according to fuel/equipment types
 filter_the_data <- function(data, variable, input_value) {
   reactive({
-    data %>% filter({{variable}} == input_value)})
+    data %>% filter({{variable}} == {{input_value}})})
 }
 
 
