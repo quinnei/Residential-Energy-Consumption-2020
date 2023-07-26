@@ -109,7 +109,7 @@ ui <- fluidPage(
 # 2-2-a) title of tab 1
     tabPanel("ENERGY INSECURITY",
 # 2-2-b) title of the landing page
-             h4("HOUSEHOLDS THAT STRUGGLE TO PAY ENERGY BILLS OR LIVE IN POTENTIALLY DANGEROUS THERMAL CONDITIONS"),
+             h4("HOUSEHOLDS THAT STRUGGLE TO PAY ENERGY BILLS OR AFFORD ENERGY-RELATED MAINTENANCE COSTS"),
 # 2-2-c) Define the size of the map
              tmapOutput("energy_insecurity_map", width = "100%", height = "865px")
     ),
